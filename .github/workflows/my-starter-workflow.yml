@@ -1,9 +1,13 @@
 name: My Starter Workflow
 
 on:
-  workflow_dispatch:
 
 jobs:
+ workflow_dispatch:
+  call-reusable-workflow:
+  uses: ./.github/workflows/reusable-workflow.yml
+  with:
+    node: 14
   build:
     runs-on: ubuntu-latest
 
